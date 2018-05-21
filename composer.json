@@ -1,0 +1,27 @@
+{
+    "name": "stevelacey/laravel-browsable-api",
+    "description": "Browsable API for Laravel, based on Django REST Framework's Browsable API",
+    "keywords": ["laravel", "browsable", "api", "drf", "rest", "framework"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Steve Lacey",
+            "email": "steve@stevelacey.net"
+        }
+    ],
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Steve\\LaravelBrowsableApi\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Steve\\LaravelBrowsableApi\\ServiceProvider"
+            ]
+        }
+    }
+}
