@@ -22,4 +22,26 @@ return [
     |
     */
     'api_url' => '/api',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Linkify responses
+    |--------------------------------------------------------------------------
+    |
+    | This option controls whether browsable api will convert urls in responses
+    | into hyperlinks, pass a callable if you want to supply your own logic
+    |
+    */
+    'linkify' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Prettify responses
+    |--------------------------------------------------------------------------
+    |
+    | This voption controls whether browsable api will pretty print json
+    | responses, pass a callable if you want to supply your own logic
+    |
+    */
+    'prettify' => true,
 ];

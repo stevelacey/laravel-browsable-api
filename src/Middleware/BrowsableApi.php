@@ -3,7 +3,7 @@
 namespace Steve\LaravelBrowsableApi\Middleware;
 
 use Closure;
-use Illuminate\Http\Response;
+use Symfony\Component\HttpFoundation\Response;
 
 class BrowsableApi
 {
@@ -22,25 +22,35 @@ class BrowsableApi
             return $response;
         }
 
-        $prettyJson = json_encode(json_decode($response->getContent()), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        $prettify = config('browsable-api.prettify');
+        if ($prettify) {
+            $response->setContent(is_callable($prettify) ? $prettify($response) : $this->prettify($response));
+        }
 
-        $prettyHtmlJson = preg_replace_callback('#https?://[^"]+#', function ($matches) {
-            $url = $matches[0];
-            $href = preg_replace('#{\w+}#', '1', $url);
+        $linkify = config('browsable-api.linkify');
+        if ($linkify) {
+            $response->setContent(is_callable($linkify) ? $linkify($response) : $this->linkify($response));
+        }
 
-            return "<a href=\"{$href}\">{$url}</a>";
-        }, $prettyJson);
-
-        $response->setContent($prettyHtmlJson);
-
-        $response->setContent(view('browsable-api::api', [
-            'request' => $request,
-            'response' => $response,
-            'statuses' => Response::$statusTexts,
-        ]));
+        $response->setContent(view('browsable-api::api', ['request' => $request, 'response' => $response]));
 
         $response->headers->set('Content-Type', 'text/html');
 
         return $response;
+    }
+
+    protected function prettify(Response $response)
+    {
+        if ($response->headers->get('Content-Type') == 'application/json') {
+            return json_encode(json_decode($response->getContent()), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+        }
+        return $response->getContent();
+    }
+
+    protected function linkify(Response $response)
+    {
+        return preg_replace_callback('#https?://[^"]+#', function ($matches) {
+            return "<a href=\"{$matches[0]}\">{$matches[0]}</a>";
+        }, $response->getContent());
     }
 }
