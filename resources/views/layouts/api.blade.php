@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="response-info">
-                        <pre class="border bg-white p-3 rounded prettyprint"><code><span class="meta nocode"><b>HTTP {{ $response->status() }} {{ $statuses[$response->status()] }}</b>
+                        <pre class="border bg-white p-3 rounded prettyprint"><code><span class="meta nocode"><b>HTTP {{ $response->status() }} {{ $response::$statusTexts[$response->status()] }}</b>
 @foreach($response->headers as $key => $values)
 @foreach($values as $value)
 <b>{{ ucwords($key, '-') }}:</b> <span class="lit">{{ $value }}</span>
