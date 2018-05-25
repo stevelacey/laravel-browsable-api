@@ -36,7 +36,7 @@
         </header>
 
         <main role="main">
-            <div class="album py-5 bg-light">
+            <div class="py-5 bg-light">
                 <div class="container">
                     <div class="request-info">
                         <pre class="border bg-white p-3 rounded prettyprint"><b>{{ $request->getMethod() }}</b> {{ $request->getRequestUri() }}</pre>
