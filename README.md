@@ -16,7 +16,7 @@ with a basic Bootstrap 4 based HTML template, and linkifies any URLs found
 ## Installation
 
 ```sh
-composer require stevelacey/laravel-browsable-api:~1.0
+composer require stevelacey/laravel-browsable-api
 ```
 
 Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider
