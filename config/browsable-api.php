@@ -25,6 +25,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Breadcrumbify responses
+    |--------------------------------------------------------------------------
+    |
+    | This option controls whether browsable api will add hyperlinks into the
+    | url segments of the request path
+    |
+    */
+    'breadcrumbify' => true,
+
+    /*
+    |--------------------------------------------------------------------------
     | Linkify responses
     |--------------------------------------------------------------------------
     |
@@ -39,7 +50,7 @@ return [
     | Prettify responses
     |--------------------------------------------------------------------------
     |
-    | This voption controls whether browsable api will pretty print json
+    | This option controls whether browsable api will pretty print json
     | responses, pass a callable if you want to supply your own logic
     |
     */

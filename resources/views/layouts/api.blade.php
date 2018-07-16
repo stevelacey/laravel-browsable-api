@@ -8,6 +8,8 @@
         <title>@yield('title', config('browsable-api.name'))</title>
 
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+        <style>.prettyprint a span { color: inherit }</style>
     </head>
 
     <body>
@@ -39,7 +41,13 @@
             <div class="py-5 bg-light">
                 <div class="container">
                     <div class="request-info">
-                        <pre class="border bg-white p-3 rounded prettyprint"><b>{{ $request->getMethod() }}</b> {{ $request->getRequestUri() }}</pre>
+                        <pre class="border bg-white p-3 rounded"><b>{{ $request->getMethod() }}</b> @if(config('browsable-api.breadcrumbify'))
+@foreach([explode('/', trim($request->getPathInfo(), '/'))] as $segments)
+@foreach($segments as $i => $segment)/<a href="/{{ implode('/', array_slice($segments, 0, $i + 1)) }}">{{ $segment }}</a>@endforeach
+@endforeach</pre>
+@else
+{{ $request->getRequestUri() }}</pre>
+@endif
                     </div>
 
                     <div class="response-info">
@@ -69,6 +77,5 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script aysnc src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
         <script async src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-        <style>.prettyprint a .str { color: inherit }</style>
     </body>
 </html>
