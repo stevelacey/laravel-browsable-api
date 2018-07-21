@@ -12,6 +12,10 @@
     "require": {
         "php": ">=7.0"
     },
+    "suggest": {
+        "barryvdh/laravel-debugbar": "Integrates PHP Debug Bar",
+        "beyondcode/laravel-query-detector": "Notifies you when you should add eager loading (N+1 queries)"
+    },
     "autoload": {
         "psr-4": {
             "Steve\\LaravelBrowsableApi\\": "src/"
