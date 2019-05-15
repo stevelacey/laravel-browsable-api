@@ -22,6 +22,10 @@ class BrowsableApi
             return $response;
         }
 
+        if ($response->headers->get('Content-Type', 'text/html') == 'text/html') {
+            return $response;
+        }
+
         $prettify = config('browsable-api.prettify');
         if ($prettify) {
             $response->setContent(is_callable($prettify) ? $prettify($response) : $this->prettify($response));
