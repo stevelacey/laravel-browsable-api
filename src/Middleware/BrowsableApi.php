@@ -3,6 +3,7 @@
 namespace Steve\LaravelBrowsableApi\Middleware;
 
 use Closure;
+use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\Response;
 
 class BrowsableApi
@@ -18,11 +19,11 @@ class BrowsableApi
     {
         $response = $next($request);
 
-        if (strpos($request->headers->get('Accept'), 'text/html') === false) {
+        if (!Str::contains($request->headers->get('Accept'), 'text/html')) {
             return $response;
         }
 
-        if ($response->headers->get('Content-Type', 'text/html') == 'text/html') {
+        if (Str::startsWith($response->headers->get('Content-Type', 'text/html'), 'text/html')) {
             return $response;
         }
 

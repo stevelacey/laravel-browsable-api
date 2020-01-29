@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "illuminate/support": "*"
     },
     "suggest": {
         "barryvdh/laravel-debugbar": "Integrates PHP Debug Bar",
