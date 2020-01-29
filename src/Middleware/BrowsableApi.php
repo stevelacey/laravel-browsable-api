@@ -19,6 +19,10 @@ class BrowsableApi
     {
         $response = $next($request);
 
+        if (!(config('browsable-api.enabled') ?? config('app.debug'))) {
+            return $response;
+        }
+
         if (!Str::contains($request->headers->get('Accept'), 'text/html')) {
             return $response;
         }

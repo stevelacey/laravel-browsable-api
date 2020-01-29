@@ -1,6 +1,19 @@
 <?php
 
 return [
+
+    /*
+     |--------------------------------------------------------------------------
+     | Browsable API Settings
+     |--------------------------------------------------------------------------
+     |
+     | Browsable API is enabled by default when debug is set to true in app.php.
+     | You can override the value by setting enable to true or false instead of null.
+     |
+     */
+
+    'enabled' => env('BROWSABLE_API_ENABLED', null),
+
     /*
     |--------------------------------------------------------------------------
     | API Name
@@ -10,6 +23,7 @@ return [
     | needs to place the API's name in title tags and headings
     |
     */
+
     'name' => env('API_NAME', env('APP_NAME', 'Laravel') . ' API'),
 
     /*
@@ -21,6 +35,7 @@ return [
     | needs to link to the API root in the base template
     |
     */
+
     'api_url' => '/api',
 
     /*
@@ -32,6 +47,7 @@ return [
     | url segments of the request path
     |
     */
+
     'breadcrumbify' => true,
 
     /*
@@ -43,6 +59,7 @@ return [
     | into hyperlinks, pass a callable if you want to supply your own logic
     |
     */
+
     'linkify' => true,
 
     /*
@@ -54,5 +71,7 @@ return [
     | responses, pass a callable if you want to supply your own logic
     |
     */
+
     'prettify' => true,
+
 ];
