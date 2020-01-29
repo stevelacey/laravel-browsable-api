@@ -46,9 +46,10 @@ class BrowsableApi
 
     protected function prettify(Response $response)
     {
-        if ($response->headers->get('Content-Type') == 'application/json') {
+        if (Str::startsWith($response->headers->get('Content-Type'), 'application/json')) {
             return json_encode(json_decode($response->getContent()), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
         }
+
         return $response->getContent();
     }
 
