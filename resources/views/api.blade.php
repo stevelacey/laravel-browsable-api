@@ -1,6 +1,6 @@
 @extends('browsable-api::layouts.api')
 
-{{-- All sections are optional, for a basic layout with no copy remove below --}}
+{{--
 
 @section('logo')
 @endsection
@@ -33,3 +33,5 @@
     <a href="/">Visit the homepage</a> or read our
     <a href="/api/docs#getting-started">getting started guide</a>.</p>
 @endsection
+
+--}}
