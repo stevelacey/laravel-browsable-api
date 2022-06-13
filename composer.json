@@ -3,14 +3,8 @@
     "description": "Browsable API for Laravel, based on Django REST Framework's Browsable API",
     "keywords": ["laravel", "browsable", "api", "drf", "rest", "framework"],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Steve Lacey",
-            "email": "steve@stevelacey.net"
-        }
-    ],
     "require": {
-        "php": ">=7.0",
+        "php": ">=7.4",
         "illuminate/support": "*"
     },
     "suggest": {
