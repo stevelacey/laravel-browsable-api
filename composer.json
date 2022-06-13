@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "php": ">=7.4",
-        "illuminate/support": "*"
+        "illuminate/support": ">=7.0"
     },
     "suggest": {
         "barryvdh/laravel-debugbar": "Integrates PHP Debug Bar",
