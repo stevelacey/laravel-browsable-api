@@ -19,13 +19,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Steve\\LaravelBrowsableApi\\": "src/"
+            "SteveLacey\\LaravelBrowsableApi\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Steve\\LaravelBrowsableApi\\ServiceProvider"
+                "SteveLacey\\LaravelBrowsableApi\\ServiceProvider"
             ]
         }
     }

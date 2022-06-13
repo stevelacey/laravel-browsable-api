@@ -1,6 +1,6 @@
 <?php
 
-namespace Steve\LaravelBrowsableApi;
+namespace SteveLacey\LaravelBrowsableApi;
 
 use Illuminate\Routing\Router;
 

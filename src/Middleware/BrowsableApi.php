@@ -1,6 +1,6 @@
 <?php
 
-namespace Steve\LaravelBrowsableApi\Middleware;
+namespace SteveLacey\LaravelBrowsableApi\Middleware;
 
 use Closure;
 use Illuminate\Support\Str;

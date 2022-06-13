@@ -21,11 +21,11 @@ Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add 
 If you don't use auto-discovery, add the ServiceProvider to the providers array in config/app.php
 
 ```php
-Steve\LaravelBrowsableApi\ServiceProvider::class,
+SteveLacey\LaravelBrowsableApi\ServiceProvider::class,
 ```
 
 Copy the package config and view into your project with the publish command:
 
 ```sh
-php artisan vendor:publish --provider="Steve\LaravelBrowsableApi\ServiceProvider"
+php artisan vendor:publish --provider="SteveLacey\LaravelBrowsableApi\ServiceProvider"
 ```
