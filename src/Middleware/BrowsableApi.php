@@ -12,18 +12,17 @@ class BrowsableApi
      * Handle an incoming request.
      *
      * @param  Request  $request
-     * @param  Closure  $next
      * @return mixed
      */
     public function handle($request, Closure $next)
     {
         $response = $next($request);
 
-        if (!(config('browsable-api.enabled') ?? config('app.debug'))) {
+        if (! (config('browsable-api.enabled') ?? config('app.debug'))) {
             return $response;
         }
 
-        if (!Str::contains($request->headers->get('Accept'), 'text/html')) {
+        if (! Str::contains($request->headers->get('Accept'), 'text/html')) {
             return $response;
         }
 

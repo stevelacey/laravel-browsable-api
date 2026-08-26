@@ -4,8 +4,13 @@
     "keywords": ["laravel", "browsable", "api", "drf", "rest", "framework"],
     "license": "MIT",
     "require": {
-        "php": ">=7.4",
-        "illuminate/support": ">=7.0"
+        "php": ">=8.2",
+        "illuminate/support": ">=12.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^10.0|^11.0",
+        "pestphp/pest": "^3.0"
     },
     "suggest": {
         "barryvdh/laravel-debugbar": "Integrates PHP Debug Bar",
@@ -15,6 +20,20 @@
         "psr-4": {
             "SteveLacey\\LaravelBrowsableApi\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SteveLacey\\LaravelBrowsableApi\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "lint": "pint $([ \"$CI\" ] && echo --test)",
+        "test": "pest"
     },
     "extra": {
         "laravel": {

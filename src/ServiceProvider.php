@@ -15,7 +15,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/browsable-api.php', 'browsable-api');
+        $this->mergeConfigFrom(__DIR__.'/../config/browsable-api.php', 'browsable-api');
     }
 
     /**
@@ -27,10 +27,10 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     {
         $router->prependMiddlewareToGroup('api', Middleware\BrowsableApi::class);
 
-        $this->publishes([__DIR__ . '/../config/browsable-api.php' => config_path('browsable-api.php')], 'config');
-        $this->publishes([__DIR__ . '/../resources/views/api.blade.php' => resource_path('views/vendor/browsable-api/api.blade.php')], 'views');
+        $this->publishes([__DIR__.'/../config/browsable-api.php' => config_path('browsable-api.php')], 'config');
+        $this->publishes([__DIR__.'/../resources/views/api.blade.php' => resource_path('views/vendor/browsable-api/api.blade.php')], 'views');
 
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'browsable-api');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'browsable-api');
     }
 
     /**

@@ -24,7 +24,7 @@ return [
     |
     */
 
-    'name' => env('API_NAME', env('APP_NAME', 'Laravel') . ' API'),
+    'name' => env('API_NAME', env('APP_NAME', 'Laravel').' API'),
 
     /*
     |--------------------------------------------------------------------------

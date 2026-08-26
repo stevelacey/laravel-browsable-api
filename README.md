@@ -1,8 +1,10 @@
 # Laravel Browsable API
 
-[![Packagist License](https://poser.pugx.org/stevelacey/laravel-browsable-api/license.png)](http://choosealicense.com/licenses/mit/)
-[![Latest Stable Version](https://poser.pugx.org/stevelacey/laravel-browsable-api/version.png)](https://packagist.org/packages/stevelacey/laravel-browsable-api)
-[![Total Downloads](https://poser.pugx.org/stevelacey/laravel-browsable-api/d/total.png)](https://packagist.org/packages/stevelacey/laravel-browsable-api)
+[![Packagist Version](https://img.shields.io/packagist/v/stevelacey/laravel-browsable-api?style=flat-square)](https://packagist.org/packages/stevelacey/laravel-browsable-api)
+[![CI](https://img.shields.io/github/actions/workflow/status/stevelacey/laravel-browsable-api/ci.yml?style=flat-square)](https://github.com/stevelacey/laravel-browsable-api/actions/workflows/ci.yml?query=branch:main)
+[![Coverage](https://img.shields.io/codecov/c/github/stevelacey/laravel-browsable-api?style=flat-square)](https://codecov.io/gh/stevelacey/laravel-browsable-api)
+[![Downloads](https://img.shields.io/packagist/dt/stevelacey/laravel-browsable-api?style=flat-square)](https://packagist.org/packages/stevelacey/laravel-browsable-api)
+[![License: MIT](https://img.shields.io/github/license/stevelacey/laravel-browsable-api?style=flat-square)](LICENSE.md)
 
 Laravel Browsable API is a package for serving human-friendly HTML output when using a browser, based on [Django REST Framework's Browsable API](http://www.django-rest-framework.org/topics/browsable-api/)
 
