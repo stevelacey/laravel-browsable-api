@@ -23,7 +23,10 @@ jobs:
       - run: pint --test
       - run: pest
 
-      - run: |
-          curl -sf -XPOST -H 'content-type:application/json' \
-            "https://packagist.org/api/update-package?username=${{ secrets.PACKAGIST_USERNAME }}&apiToken=${{ secrets.PACKAGIST_TOKEN }}" \
+      - name: Notify Packagist
+        run: |
+          curl --fail-with-body -XPOST \
+            -H 'content-type: application/json' \
+            -H 'Authorization: Bearer ${{ github.repository_owner }}:${{ secrets.PACKAGIST_TOKEN }}' \
+            "https://packagist.org/api/update-package" \
             -d '{"repository":{"url":"https://packagist.org/packages/${{ github.repository }}"}}'
